@@ -1,13 +1,32 @@
 [English](./README.md) | 简体中文
 
-## 说明
-  这是适用于[dayjs](https://github.com/iamkun/dayjs)的一个插件，为dayjs赋予操作UTC时区的功能
+> 这是适用于[dayjs](https://github.com/iamkun/dayjs)的一个插件，为dayjs赋予操作UTC时区的功能
+
+---
 
 ## 使用方法
-  ```javascript
-  import UTCPlugin from 'dayjs/plugin/utc'
 
-  dayjs.extend(UTCPlugin)
+  * Via NPM:
+
+  ```console
+  npm i dayjs-plugin-utc --save
+  ```
+
+  ```javascript
+  import dayjsPluginUTC from 'dayjs-plugin-utc'
+
+  dayjs.extend(dayjsPluginUTC)
+  ```
+
+  * Via CDN:
+
+  ```html
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://unpkg.com/dayjs"></script>
+  <script src="https://unpkg.com/dayjs-plugin-utc"></script>
+  <script>
+    dayjs.extend(dayjsPluginUTC.default)
+  </script>
   ```
 
   > **⚠️ 注意⚠️** 
@@ -18,7 +37,7 @@
   > ```
   > 而在你加载这个插件之后，`dayjs()`返回实例的时区将会与你传入的值有关
   > ```javascript
-  > dayjs.extend(UTCPlugin)
+  > dayjs.extend(dayjsPluginUTC)
   > dayjs('2018-05-18T03:04:05+06:00').format() // 2018-05-18T03:04:05+06:00
   > ```
   > 如果你希望新建的实例的时区总是基于你本地时区，或者你使用这个插件之前已经在项目中使用了dayjs
@@ -26,7 +45,7 @@
   > 你可以在引入插件时附上这个参数`parseToLocal: true`
   >
   > ```javascript
-  > dayjs.extend(UTCPlugin, { parseToLocal: true })
+  > dayjs.extend(dayjsPluginUTC, { parseToLocal: true })
   > dayjs('2018-05-18T03:04:05+06:00').format() // 2018-05-18T05:04:05+08:00
   > ```
   >

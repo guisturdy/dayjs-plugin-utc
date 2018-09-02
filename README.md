@@ -1,13 +1,32 @@
 English | [简体中文](./README.zh-CN.md)
 
-## Installation
-  this is a plugin for [dayjs](https://github.com/iamkun/dayjs), that gives dayjs the ability to operate UTC timezone
+> this is a plugin for [dayjs](https://github.com/iamkun/dayjs), that gives dayjs the ability to operate UTC timezone
+
+---
 
 ## Usage
-  ```javascript
-  import UTCPlugin from 'dayjs/plugin/utc'
 
-  dayjs.extend(UTCPlugin)
+  * Via NPM:
+
+  ```console
+  npm i dayjs-plugin-utc --save
+  ```
+
+  ```javascript
+  import dayjsPluginUTC from 'dayjs-plugin-utc'
+
+  dayjs.extend(dayjsPluginUTC)
+  ```
+
+  * Via CDN:
+
+  ```html
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://unpkg.com/dayjs"></script>
+  <script src="https://unpkg.com/dayjs-plugin-utc"></script>
+  <script>
+    dayjs.extend(dayjsPluginUTC.default)
+  </script>
   ```
 
   > **⚠️ NOTICE⚠️** 
@@ -18,7 +37,7 @@ English | [简体中文](./README.zh-CN.md)
   > ```
   > after load this plugin the timezone of instance return by `dayjs()` will rely on what you passed
   > ```javascript
-  > dayjs.extend(UTCPlugin)
+  > dayjs.extend(dayjsPluginUTC)
   > dayjs('2018-05-18T03:04:05+06:00').format() // 2018-05-18T03:04:05+06:00
   > ```
   > if you always want an local timezone instance would be create or you already use dayjs in you project
@@ -26,7 +45,7 @@ English | [简体中文](./README.zh-CN.md)
   > you can load this plugin with option `parseToLocal: true`
   >
   > ```javascript
-  > dayjs.extend(UTCPlugin, { parseToLocal: true })
+  > dayjs.extend(dayjsPluginUTC, { parseToLocal: true })
   > dayjs('2018-05-18T03:04:05+06:00').format() // 2018-05-18T05:04:05+08:00
   > ```
   >
