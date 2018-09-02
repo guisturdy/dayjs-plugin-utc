@@ -1,5 +1,4 @@
-const webpack = require('webpack');
-const path = require('path');
+const path = require('path')
 
 const config = {
   entry: './src/index.js',
@@ -15,10 +14,10 @@ const config = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: "babel-loader"
+        loader: 'babel-loader'
       }
     ]
   }
 }
 
-module.exports = config;
+module.exports = config
