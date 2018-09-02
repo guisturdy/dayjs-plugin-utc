@@ -1,6 +1,6 @@
 {
   "name": "dayjs-plugin-utc",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "utc plugin for dayjs",
   "main": "dist/dayjs-plugin-utc.min.js",
   "keywords": [
