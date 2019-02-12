@@ -35,11 +35,25 @@ class UTCDate {
 });
 
 [
-  'toISOString', 'toUTCString', 'toGMTString', 'toJSON', 'getUTCDate', 'getUTCDay', 'getUTCFullYear', 'getUTCHours', 'getUTCMilliseconds', 'getUTCMinutes', 'getUTCMonth', 'getUTCSeconds', 'valueOf', 'getTime'
+  'toUTCString', 'toGMTString', 'toJSON', 'getUTCDate', 'getUTCDay', 'getUTCFullYear', 'getUTCHours', 'getUTCMilliseconds', 'getUTCMinutes', 'getUTCMonth', 'getUTCSeconds', 'valueOf', 'getTime'
 ].forEach((key) => {
   UTCDate.prototype[key] = function () {
     return datePrototype[key].apply(
       new Date(this.$d.getTime() + getTimestampOffset(this.$timezoneOffset)),
+      arguments // eslint-disable-line prefer-rest-params
+    )
+  }
+});
+
+[
+  'toISOString'
+].forEach((key) => {
+  UTCDate.prototype[key] = function () {
+    const exDate = this.$d
+    exDate.setHours(exDate.getHours() - LOCAL_TIMEZONE_OFFSET / 60)
+
+    return datePrototype[key].apply(
+      exDate,
       arguments // eslint-disable-line prefer-rest-params
     )
   }
