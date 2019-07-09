@@ -90,3 +90,9 @@ it('new instance is not local', () => {
   if (new Date().getTimezoneOffset() === -480) timeStr = '2018-05-18T03:04:05+07:00'
   expect(dayjs(timeStr).isLocal()).toBe(false)
 })
+
+it('new instance startOf function keeps given timezone', () => {
+  let timeStr = '2018-05-18T03:04:05+08:00'
+  if (new Date().getTimezoneOffset() === -480) timeStr = '2018-05-18T03:04:05+07:00'
+  expect(dayjs(timeStr).startOf('day').isLocal()).toBe(false);
+})
