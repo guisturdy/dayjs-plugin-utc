@@ -4,7 +4,7 @@ import { parseTimezoneOffset } from './util'
 let RETURN_LOCAL_INSTANCE = false
 
 const injectDayjsClass = function (pluginPrototype, $super) {
-  ['clone', 'add', 'subtract'].forEach((key) => {
+  ['clone', 'add', 'subtract', 'startOf'].forEach((key) => {
     pluginPrototype[key] = function () {
       const $utcOffset = this.utcOffset()
       // eslint-disable-next-line prefer-rest-params
