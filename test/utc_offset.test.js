@@ -234,7 +234,7 @@ test('same / before / after', () => {
   expect(zoneA.isSame(zoneB, 'hour')).toBe(true)
   expect(zoneA.isSame(zoneC, 'hour')).toBe(true)
 
-  zoneA = zoneA.add(1)
+  zoneA = zoneA.add(1, 'hour')
 
   expect(zoneA.isAfter(zoneB)).toBe(true)
   expect(zoneA.isAfter(zoneC)).toBe(true)
@@ -242,7 +242,7 @@ test('same / before / after', () => {
   expect(zoneA.isAfter(zoneB, 'hour')).toBe(true)
   expect(zoneA.isAfter(zoneC, 'hour')).toBe(true)
 
-  zoneA = zoneA.subtract(2)
+  zoneA = zoneA.subtract(2, 'hour')
 
   expect(zoneA.isBefore(zoneB)).toBe(true)
   expect(zoneA.isBefore(zoneC)).toBe(true)
