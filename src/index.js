@@ -37,7 +37,7 @@ const injectDayjsClass = function (pluginPrototype, $super) {
   pluginPrototype.isUTC = function () {
     return this.$d.getTimezoneOffset() === 0
   }
-  pluginPrototype.$set = function(...args) {
+  pluginPrototype.$set = function (...args) {
     const tzOffset = this.$d.getTimezoneOffset()
     $super.$set.call(this, ...args)
     if (this.$d instanceof Date) {
