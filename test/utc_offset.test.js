@@ -190,13 +190,13 @@ test('cloning', () => {
 test('start of / end of', () => {
   const a = dayjs.utc('2010-2-2 0:0:0').utcOffset(-450)
 
-  expect(a.clone().startOf('day').hour()).toBe(0)
-  expect(a.clone().startOf('day').minute()).toBe(0)
-  expect(a.clone().startOf('hour').minute()).toBe(0)
+  expect(a.clone().startOf('day').hour()).toBe(8)
+  expect(a.clone().startOf('day').minute()).toBe(30)
+  expect(a.clone().startOf('hour').minute()).toBe(30)
 
-  expect(a.clone().endOf('day').hour()).toBe(23)
-  expect(a.clone().endOf('day').minute()).toBe(59)
-  expect(a.clone().endOf('hour').minute()).toBe(59)
+  expect(a.clone().endOf('day').hour()).toBe(8)
+  expect(a.clone().endOf('day').minute()).toBe(29)
+  expect(a.clone().endOf('hour').minute()).toBe(29)
 })
 
 test('reset offset with dayjs#utc', () => {
